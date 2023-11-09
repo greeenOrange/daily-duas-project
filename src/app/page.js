@@ -9,7 +9,6 @@ async function getDuas(){
 
 export default async function Home() {
     const duas = await getDuas()
-    console.log(duas);
   return (
     <main className="flex min-h-screen flex-col">
     <Navbar />
