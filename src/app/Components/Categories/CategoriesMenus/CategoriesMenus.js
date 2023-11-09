@@ -1,7 +1,7 @@
 import React from 'react'
-const CategoriesMenus = ({ duas }) => {
-  console.log(duas);
-  if (!duas) {
+const CategoriesMenus = ({ duas, subDuas }) => {
+  console.log(subDuas);
+  if (!duas ) {
     return <p>Loading...</p>;
   }
   if (!duas || duas.length === 0) {
@@ -33,12 +33,11 @@ const CategoriesMenus = ({ duas }) => {
        
       </div>
       <div className="collapse-content">
-       { <ul className="steps steps-vertical">
-          <li className="step step-secondary">Register</li>
-          <li className="step step-secondary">Choose plan</li>
-          <li className="step">Purchase</li>
-          <li className="step">Receive Product</li>
-        </ul>}
+         <ul className="steps steps-vertical">
+       {subDuas.map((dua, index) => (
+          <li key={index} className="step text-sm font-normal">{dua?.subcat_name_en}</li>
+          ))}
+        </ul>
       </div>
     </div>
      ))}

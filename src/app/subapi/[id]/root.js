@@ -15,7 +15,7 @@ export async function GET(req, res) {
     });
   }
 
-  const item = await db.get("SELECT * FROM 'category' WHERE id = ?", id);
+  const item = await db.get("SELECT * FROM 'sub_category' WHERE id = ?", id);
   return new Response(JSON.stringify(item), {
     headers: { "Content-Type": "application/json" },
     status: 200,

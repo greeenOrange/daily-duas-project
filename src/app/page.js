@@ -6,16 +6,22 @@ async function getDuas(){
     const data = await response.json()
     return data
 }
+async function getSubDuas(){
+    const response = await fetch('http://localhost:3000/subapi')
+    const data = await response.json()
+    return data
+}
 
 export default async function Home() {
     const duas = await getDuas()
+    const subDuas = await getSubDuas()
   return (
     <main className="flex min-h-screen flex-col">
     <Navbar />
     
     <div className="lg:flex">
       <div className="lg:w-64 p-4">
-        <Categories duas={duas}/>
+        <Categories duas={duas} subDuas={subDuas}/>
       </div>
       <div className="flex-1 bg-green-200 p-4">Main Content (Variable Width)
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import './Categories.css';
 import CategoriesMenus from './CategoriesMenus/CategoriesMenus';
 
-const Categories = ({duas}) => {
+const Categories = ({duas, subDuas}) => {
     return (
         <div className="flex min-h-screen flex-col gap-2.5">
             <h3 className="p-5 bg-green-500 text-center rounded-md text-white">Categories</h3>
@@ -35,7 +35,7 @@ const Categories = ({duas}) => {
                     </svg>
                 </div>
             </div>
-            <CategoriesMenus duas={duas}/>
+            <CategoriesMenus duas={duas} subDuas={subDuas}/>
         </div>
     )
 }
