@@ -19,6 +19,11 @@ export async function GET(req, res) {
   // Perform a database query to retrieve all items from the "items" table
   const items = await db.all("SELECT * FROM 'category' LIMIT 0,30");
 
+  // const { id } = req.params;
+
+  // Perform a database query to retrieve a specific item from the "category" table based on the ID
+  // const item = await db.get("SELECT * FROM 'category' WHERE id = ?", id);
+  
   // Return the items as a JSON response with status 200
   return new Response(JSON.stringify(items), {
     headers: { "Content-Type": "application/json" },
